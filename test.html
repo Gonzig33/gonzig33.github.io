@@ -8,6 +8,8 @@
   <style>
 h1 { color: #FF0000; }
   </style>
+    <script src="//code.jquery.com/jquery.js"></script>
+   <script src="//cdn.rawgit.com/hilios/jQuery.countdown/2.2.0/dist/jquery.countdown.min.js"></script>
 </head>
 <body>
 
@@ -43,6 +45,14 @@ Pourtant, il fait beaucoup d'efforts.
     <textarea name="prez" id="presentation"></textarea><br></br>
     <input type="submit" value="Envoyer">
 </form>
+
+<script type="text/javascript">
+  // 15 days from now!
+  var date = new Date(new Date().valueOf() + 15 * 24 * 60 * 60 * 1000);
+  $('#clock').countdown(date, function(event) {
+    $(this).html(event.strftime('%D days %H:%M:%S'));
+  });
+</script>
 
 </body>
 </html>
