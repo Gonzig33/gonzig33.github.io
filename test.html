@@ -9,7 +9,7 @@
 <script src="https://cdn.rawgit.com/hilios/jQuery.countdown/2.2.0/dist/jquery.countdown.min.js"></script>
 </head>
 <body>
-
+<span id="clock"></span>
  <p>
 Charles ne comprends pas ce qui se passe dans ce cours 
  </p>
@@ -43,9 +43,14 @@ Pourtant, il fait beaucoup d'efforts.
     <input type="submit" value="Envoyer">
 </form>
 
+<div class="example-base">
+  Limited Time Only!
+  <span id="clock"></span>
+</div>
+
 <script type="text/javascript">
   // 15 days from now!
-  var date = new Date(new Date().valueOf() + 15 * 24 * 60 * 60 * 1000);
+  var date = new Date(new Date().valueOf() + 3 * 24 * 60 * 60 * 1000);
   $('#clock').countdown(date, function(event) {
     $(this).html(event.strftime('%D days %H:%M:%S'));
   });
